@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="LayoutPadrao">
+<head>
+	<meta charset="utf-8"></meta>
+	<title>Cadastro de Picolés</title>
+</head>
+
+	<section layout:fragment="conteudo">
+	
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<div class="clearfix">
+					<h1 class="panel-title wj-titulo-panel">Pesquisa de picolés</h1>
+					<a class="btn btn-link wj-link-panel" href="/dashboard">Voltar para o Dashboard</a>
+					
+				</div>
+			</div>
+			
+			<div class="panel-body">
+				<table class="table table-bordered table-striped">
+					<thead>
+						<tr>
+							<th class="text-center col-md-1">#</th>
+							<th>Data</th>
+							<th class="text-center col-md-2">Total</th>
+							<th class="text-right col-md-2">Pagos</th>
+							<th class="text-center col-md-2">Status</th>
+							<th class="text-center col-md-1"></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td colspan="6" th:if="${#lists.isEmpty(picoles)}">Não existem picolés</td>
+						</tr>
+						<tr th:each="picole : ${picoles}">
+							<td class="text-center" th:text="${picole.id}"></td>
+							<td th:text="${{picole.data}}"></td>
+							<td class="text-center" th:text="${picole.quantidade}"></td>
+							<td class="text-right" th:text="${picole.pagos}"></td>
+							<td class="text-center" >
+								<span class="label" th:text="${picole.status.descricao}" 
+											th:classappend="${picole.pendente ? 'label-danger' : 'label-success'}"></span>
+							</td>
+							<td class="text-center">
+								<a class="btn btn-link btn-xs" th:href="@{/picole/{id}(id=${picole.id})}">
+									<span class="glyphicon glyphicon-pencil"></span>
+								</a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		
+	</section>
+
+</html>

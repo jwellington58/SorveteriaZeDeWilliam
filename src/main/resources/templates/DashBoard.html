@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="LayoutPadrao">
+<head>
+	<title>Cadastro de Picolés</title>
+</head>
+
+	<section layout:fragment="conteudo">
+		
+		<div class="col-sm-offset-2 col-sm-8">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h1 class="panel-title">Gráfico: Total X Pagos </h1>
+				</div>
+				<canvas id="chart"></canvas>
+			</div>
+		</div>
+		
+	<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.min.js"></script>	
+	<script type="text/javascript" src="/js/DashBoard.js"></script>
+	</section>
+</html>

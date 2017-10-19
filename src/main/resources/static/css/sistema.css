@@ -1,0 +1,44 @@
+@charset "ISO-8859-1";
+
+.navbar{
+	background-color: #337ab7;
+}
+.panel{
+	margin: 12px;
+}
+.form-control{
+	
+}
+label {
+	font-style: italic;
+	
+	margin: 0px;
+}
+.wj-label{
+	font-style: italic;
+	color: #fff;
+	margin: 0px;
+}
+.alert{
+	margin-left: 12px;
+	margin-right: 12px
+}
+.wj-link-panel{
+	float: right;
+	color: white;
+	text-decoration: none;
+	padding: 0px;
+}
+.wj-titulo-panel{
+	float: left;
+	padding-top: 2px;
+}
+.wj-nav-link{
+	
+    margin: 13px;
+	
+}
+
+a:link, a:visited, a:active {
+	text-decoration: none;
+	}
